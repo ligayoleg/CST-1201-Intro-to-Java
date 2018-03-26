@@ -9,13 +9,12 @@ public class question_1 {
 		int numOfStudents = input.nextInt();
 		
 //		Ask for 4 scores
-		System.out.print("Enter  4 scores: ");
-		int score1 = input.nextInt();
-		int score2 = input.nextInt();
-		int score3 = input.nextInt();
-		int score4 = input.nextInt();
-//		Push scores into an array scores
-		int[] scores = {score1, score2, score3, score4};
+		System.out.print("Enter " + numOfStudents + " scores: ");
+		int[] scores = new int[numOfStudents];
+		for(int i = 0; i < numOfStudents; i++) {
+			scores[i] = input.nextInt(); 
+		}
+		
 //		Initiate the best variable
 		int best = 0;
 //		Loop through the scores to find the best one and assign to var best
@@ -23,15 +22,16 @@ public class question_1 {
 			if(scores[i] > best) {
 				best = scores[i];
 			}
-		}//
+		}
+		System.out.println(best);
 		
-		String bestGrade1 = gradeCheck(best, scores);
-		System.out.println(bestGrade1);
+		//String bestGrade1 = gradeCheck(best, scores);
+		//System.out.println(bestGrade1);
 	}
 	
 	
 //	Create a function that checks what grade to give to score
-	public static String[] gradeCheck(int best, int[] scores) {
+public static String[] gradeCheck(int best, int[] scores) {
 		String grade;
 		String[] grades;
 		for(int i = 0; i < scores.length; i++) {
@@ -50,9 +50,10 @@ public class question_1 {
 		}
 		
 	}
-	
-	
-	
-
-
 }
+	
+	
+	
+
+
+
