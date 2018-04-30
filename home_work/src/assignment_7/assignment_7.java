@@ -23,6 +23,7 @@ public class assignment_7 {
 		double [] numArr = new double[10];
 		Random ranNum= new Random();
 		
+		
 		//1. Assign the value of 5.5 to the first element in the array.
 		numArr[0] = 5.5;
 		System.out.println(numArr[0]);
@@ -32,9 +33,12 @@ public class assignment_7 {
 		System.out.println(numArr[numArr.length - 1]);
 		
 		//3. assign random number for the rest of the elements in the array
+		double max = 50.0;
+		double min = 0.0;
 		for(int i = 0; i < numArr.length; i++) {
 			if(numArr[i] == 0.0) {
-				numArr[i] = Math.random();
+				double ranDoub = min + (max - min) * ranNum.nextDouble();
+				numArr[i] = ranDoub;
 			}
 		}
 		
@@ -46,7 +50,8 @@ public class assignment_7 {
 		System.out.println("the sum of an array is: " + sum);
 		
 		//5. Randomly generate an index and display the element of this index in the array.
-		
+		int ranInt = (int)(Math.random() * 10);
+		System.out.println("The number from array randomly is = " + numArr[ranInt] );
 		
 		//6.	Create another array and copy the contents of first array into second array.
 		double [] arrNum2  = new double[10];
